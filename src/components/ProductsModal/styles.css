@@ -1,0 +1,120 @@
+.product-modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
+    border: 1px solid lightslategrey;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0 0 0;
+    position: relative;
+    animation: fadeInOut 0.5s ease forwards;
+    opacity: 0;
+    height: fit-content;
+}
+
+.close-btn {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    cursor: pointer;
+    animation: rotate 0.5s ease forwards;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: lightgray;
+}
+
+.close-btn > svg {
+    width: 30px;
+    height: 30px;
+}
+
+.product-modal-title {
+    font-size: 22px;
+    margin: 20px 50px;
+}
+
+.products-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.products-list-item:last-child {
+    border-radius: 10px;
+}
+
+.products-list-item {
+    background-color: #f4f4f4;
+}
+
+.products-list-item:hover {
+    background-color: white;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgray;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    justify-content: space-between;
+}
+
+.product-card-photo {
+    width: 50px;
+    height: 50px;
+}
+
+.product-card-info {
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-card-title {
+    margin: 0;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.product-card-serial {
+    font-size: 14px;
+    color: lightslategrey;
+}
+
+.product-card-type {
+    color: lightslategrey;
+    margin: 0;
+}

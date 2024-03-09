@@ -8,6 +8,8 @@
     justify-content: space-between;
     transition: box-shadow 0.3s ease;
     cursor: pointer;
+    height: 60px;
+    overflow: hidden;
 }
 
 .card-layout:hover {
@@ -70,24 +72,29 @@
     font-weight: 600;
 }
 
-.delete-btn {
+.active-order {
+    position: relative;
+    width: 30px;
+}
+
+.active-icon {
+    position: absolute;
+    background-color: darkgrey;
+    top: -40px;
+    height: 80px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.active-icon.active {
+    opacity: 1;
+}
+
+.active-icon > svg {
     width: 40px;
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 50%;
-    background: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.delete-btn > svg {
-    width: 20px;
-    height: 20px;
-}
-
-.delete-btn:hover {
-    background-color: lightslategrey;
 }
