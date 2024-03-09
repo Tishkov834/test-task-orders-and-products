@@ -4,22 +4,19 @@ import {
 
 import OrdersPage from '../../pages/OrdersPage';
 import ProductsPage from '../../pages/ProductsPage';
-import NavigationMenu from '../NavigationMenu';
+import Layout from '../Layout';
 import './normalize.css';
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <NavigationMenu />
-        <Routes>
-          <Route path="/" element={<Navigate to="/products" />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/orders" element={<OrdersPage />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Navigate to="/products" />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/orders" element={<OrdersPage />} />
+      </Routes>
+    </Layout>
+  </Router>
+);
 
 export default App;
