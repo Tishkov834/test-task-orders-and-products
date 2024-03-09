@@ -6,6 +6,7 @@ import OrdersPage from '../../pages/OrdersPage';
 import ProductsPage from '../../pages/ProductsPage';
 import Layout from '../Layout';
 import './normalize.css';
+import './styles.css';
 
 const App = () => (
   <Router>
