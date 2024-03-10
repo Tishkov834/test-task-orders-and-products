@@ -1,0 +1,100 @@
+.card-layout {
+    display: flex;
+    border: 1px solid lightslategrey;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 60px;
+    overflow: hidden;
+}
+
+.card-layout:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    min-width: 40%;
+    margin: 0;
+    font-size: 20px;
+    color: lightslategrey;
+    text-decoration: underline;
+}
+
+.card-products {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid lightslategrey;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.item-icon > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card-products-info {
+    display: flex;
+    flex-direction: column;
+    color: lightslategrey;
+}
+
+.card-products-info-amount {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: lightslategrey;
+}
+
+.additional-info {
+    font-size: 12px;
+}
+
+.main-info {
+    font-weight: 600;
+}
+
+.active-order {
+    position: relative;
+    width: 30px;
+}
+
+.active-icon {
+    position: absolute;
+    background-color: darkgrey;
+    top: -40px;
+    height: 80px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.active-icon.active {
+    opacity: 1;
+}
+
+.active-icon > svg {
+    width: 40px;
+    height: 40px;
+}
