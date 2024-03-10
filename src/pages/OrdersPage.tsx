@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { getOrders } from '../api/orders';
 import OrdersList from '../components/OrdersList';
+import { OrderType } from '../types/types';
 
 const OrdersPage = () => {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState<OrderType[]>([]);
 
   useEffect(() => {
     getOrders()
@@ -14,7 +15,7 @@ const OrdersPage = () => {
   return (
     <div>
       <h1>{`Приходы / ${orders.length}`}</h1>
-      <OrdersList orders={orders} />
+      <OrdersList orders={orders} setOrders={setOrders} />
     </div>
   );
 };

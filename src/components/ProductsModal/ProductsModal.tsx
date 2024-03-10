@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../customHooks/redux';
-import { closeIcon } from '../../assets/icons';
+import DeleteButton from '../common/DeleteButton';
+import CloseButton from '../common/CloseButton';
 import {
   setProductsModalModalIsOpen, setProductsModalOrderId,
   setProductsModalOrderName,
   setProductsModalProducts,
 } from '../../redux/productsModalReducer';
 import './styles.css';
-import DeleteButton from '../common/DeleteButton';
 
 const ProductsModal = () => {
   const { modalIsOpen, products, orderName } = useAppSelector((state) => state.productsModal.productsModal);
@@ -47,10 +47,7 @@ const ProductsModal = () => {
             ))
         }
       </ul>
-      <button className="close-btn" onClick={onCloseModal}>
-        {closeIcon}
-      </button>
-
+      <CloseButton onClose={onCloseModal} />
     </div>
   );
 };

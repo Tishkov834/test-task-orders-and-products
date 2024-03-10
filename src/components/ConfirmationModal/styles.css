@@ -1,0 +1,93 @@
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px 0 0 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.5s ease forwards;
+    position: relative;
+}
+
+.modal-title {
+    font-size: 22px;
+    margin: 20px 40px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    padding: 20px 30px;
+    background-color: limegreen;
+    gap: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.cancel-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.cancel-button:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.delete-button {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    gap: 20px;
+    color: red;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+.delete-button:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.delete-button > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.delete-button > svg > path {
+    stroke: red;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

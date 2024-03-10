@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import productsModalReducer from './productsModalReducer';
+import deleteOrderModalReducer from './deleteOrderModalReducer';
 
 const store = configureStore({
   reducer: {
     productsModal: productsModalReducer,
+    deleteOrderModal: deleteOrderModalReducer,
   },
 });
 

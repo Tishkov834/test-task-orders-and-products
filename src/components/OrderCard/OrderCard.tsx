@@ -1,4 +1,6 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, {
+  FC, MouseEventHandler, useEffect, useState,
+} from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../customHooks/redux';
 import {
@@ -6,6 +8,11 @@ import {
   setProductsModalOrderName,
   setProductsModalProducts,
 } from '../../redux/productsModalReducer';
+import {
+  setDeleteOrderModalIsOpen,
+  setDeleteOrderModalOrderId,
+  setDeleteOrderModalProducts,
+} from '../../redux/deleteOrderModalReducer';
 import { arrowIcon, itemsIcon } from '../../assets/icons';
 import { ProductType } from '../../types/types';
 import { formatDate } from '../../helpers/formatDate';
@@ -39,6 +46,14 @@ const OrderCard: FC<OrderCardProps> = ({
     if (event.key === 'Enter' || event.key === ' ') {
       openProductModal();
     }
+  };
+
+  const handleDelete: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+
+    dispatch(setDeleteOrderModalIsOpen(true));
+    dispatch(setDeleteOrderModalProducts(products));
+    dispatch(setDeleteOrderModalOrderId(id));
   };
 
   useEffect(() => {
@@ -92,7 +107,9 @@ const OrderCard: FC<OrderCardProps> = ({
             </div>
           </div>
         )
-        : <DeleteButton />}
+        : (
+          <DeleteButton onClick={handleDelete} />
+        )}
 
     </div>
   );
