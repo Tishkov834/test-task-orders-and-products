@@ -10,6 +10,7 @@
     cursor: pointer;
     height: 60px;
     overflow: hidden;
+    gap: 10px;
 }
 
 .card-layout:hover {
@@ -17,11 +18,14 @@
 }
 
 .card-title {
-    min-width: 40%;
+    width: 40%;
     margin: 0;
     font-size: 20px;
     color: lightslategrey;
     text-decoration: underline;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .card-products {
@@ -54,21 +58,6 @@
 
 .card-products-info-amount {
     font-size: 22px;
-    font-weight: 600;
-}
-
-.info-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: lightslategrey;
-}
-
-.additional-info {
-    font-size: 12px;
-}
-
-.main-info {
     font-weight: 600;
 }
 

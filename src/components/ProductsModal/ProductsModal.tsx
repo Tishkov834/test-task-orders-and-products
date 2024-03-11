@@ -3,6 +3,7 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../customHooks/redux';
 import DeleteButton from '../common/DeleteButton';
 import CloseButton from '../common/CloseButton';
+import ProductTitle from '../common/ProductTitle';
 import {
   setProductsModalModalIsOpen, setProductsModalOrderId,
   setProductsModalOrderName,
@@ -36,10 +37,7 @@ const ProductsModal = () => {
               <li className="products-list-item" key={id}>
                 <div className="product-card">
                   <img className="product-card-photo" src={photo} alt="product" />
-                  <div className="product-card-info">
-                    <p className="product-card-title">{title}</p>
-                    <span className="product-card-serial">{serialNumber}</span>
-                  </div>
+                  <ProductTitle title={title} serialNumber={serialNumber} />
                   <p className="product-card-type">{type}</p>
                   <DeleteButton />
                 </div>

@@ -1,0 +1,16 @@
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: lightslategrey;
+}
+
+.additional-info {
+    font-size: 12px;
+    text-align: center;
+}
+
+.main-info {
+    font-weight: 600;
+    text-align: center;
+}

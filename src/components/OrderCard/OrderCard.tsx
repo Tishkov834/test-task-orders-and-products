@@ -17,6 +17,7 @@ import { arrowIcon, itemsIcon } from '../../assets/icons';
 import { ProductType } from '../../types/types';
 import { formatDate } from '../../helpers/formatDate';
 import DeleteButton from '../common/DeleteButton';
+import ItemInfo from '../common/ItemInfo';
 import './styles.css';
 
 type OrderCardProps = {
@@ -29,8 +30,8 @@ type OrderCardProps = {
 const OrderCard: FC<OrderCardProps> = ({
   id, title, products, date,
 }) => {
-  const [totalUSD, setTotalUSD] = useState<number | null>(null);
-  const [totalUAH, setTotalUAH] = useState<number | null>(null);
+  const [totalUSD, setTotalUSD] = useState<string>('');
+  const [totalUAH, setTotalUAH] = useState<string>('');
 
   const dispatch = useAppDispatch();
   const { modalIsOpen, orderId } = useAppSelector((state) => state.productsModal.productsModal);
@@ -72,8 +73,8 @@ const OrderCard: FC<OrderCardProps> = ({
         { usdTotal: 0, uahTotal: 0 },
       );
 
-      if (usdTotal !== 0) setTotalUSD(usdTotal);
-      if (uahTotal !== 0) setTotalUAH(uahTotal);
+      if (usdTotal !== 0) setTotalUSD(String(usdTotal));
+      if (uahTotal !== 0) setTotalUAH(String(uahTotal));
     };
 
     calculateTotal();
@@ -89,15 +90,11 @@ const OrderCard: FC<OrderCardProps> = ({
           <span className="card-products-info-title">Продукта</span>
         </div>
       </div>
-      <div className="info-wrapper">
-        <span className="additional-info">{formatDate(date)}</span>
-        <span className="main-info">{formatDate(date, false)}</span>
-      </div>
+
+      <ItemInfo mainText={formatDate(date, false)} additionalText={formatDate(date)} />
+
       {!modalIsOpen && (
-      <div className="info-wrapper">
-        <span className="additional-info">{totalUSD && `${totalUSD} $`}</span>
-        <span className="main-info">{totalUAH && `${totalUAH} UAH`}</span>
-      </div>
+        <ItemInfo mainText={totalUAH && `${totalUAH} UAH`} additionalText={totalUSD && `${totalUSD} $`} />
       )}
       {modalIsOpen
         ? (

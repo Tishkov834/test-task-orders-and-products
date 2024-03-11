@@ -45,30 +45,12 @@
     transition: background-color 0.3s ease;
     cursor: pointer;
     padding: 10px 30px 10px 30px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .product-card-photo {
     width: 50px;
     height: 50px;
-}
-
-.product-card-info {
-    min-width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.product-card-title {
-    margin: 0;
-    font-size: 18px;
-    text-decoration: underline;
-}
-
-.product-card-serial {
-    font-size: 14px;
-    color: lightslategrey;
 }
 
 .product-card-type {
