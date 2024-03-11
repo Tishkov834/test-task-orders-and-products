@@ -1,0 +1,10 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}

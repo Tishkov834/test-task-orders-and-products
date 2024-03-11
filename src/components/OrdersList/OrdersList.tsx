@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import OrderCard from '../OrderCard';
 import ProductsModal from '../ProductsModal';
 import ConfirmationModal from '../ConfirmationModal';
+import ProductTitle from '../common/ProductTitle';
 import { useAppDispatch, useAppSelector } from '../../customHooks/redux';
 import { deleteOrder } from '../../api/orders';
 import {
@@ -60,10 +61,8 @@ const OrdersList: FC<OrdersListProps> = ({ orders, setOrders }) => {
               <li className="products-list-item" key={id}>
                 <div className="product-card">
                   <img className="product-card-photo" src={photo} alt="product" />
-                  <div className="product-card-info">
-                    <p className="product-card-title">{title}</p>
-                    <span className="product-card-serial">{serialNumber}</span>
-                  </div>
+
+                  <ProductTitle title={title} serialNumber={serialNumber} />
                 </div>
               </li>
             ))

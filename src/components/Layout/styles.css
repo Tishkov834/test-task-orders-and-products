@@ -1,6 +1,6 @@
 .layout-wrapper {
     display: flex;
-    height: 100vh;
+    min-height: 100%;
     padding-top: 80px;
 }
 
@@ -8,11 +8,11 @@
     background-color: #ffffff;
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
     flex: 0 0 auto;
-    width: 250px;
+    width: 150px;
     padding: 100px 20px;
 }
 
 .main-wrapper {
     flex: 1;
-    padding: 100px 120px;
+    padding: 50px 60px;
 }

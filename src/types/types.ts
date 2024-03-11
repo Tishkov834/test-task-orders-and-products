@@ -1,3 +1,9 @@
+export type PriceType = {
+  value: number
+  symbol: string
+  isDefault: boolean
+};
+
 export type ProductType = {
   id: number
   serialNumber: number
@@ -10,11 +16,7 @@ export type ProductType = {
     start: string
     end: string
   },
-  price: {
-    value: number
-    symbol: string
-    isDefault: boolean
-  }[]
+  price: PriceType[]
   orderId: number
   date: string
 };
