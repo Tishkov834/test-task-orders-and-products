@@ -1,0 +1,21 @@
+.delete-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.delete-btn:hover {
+    background-color: lightslategrey;
+}
