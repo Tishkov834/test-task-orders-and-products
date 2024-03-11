@@ -7,6 +7,7 @@ import OrdersPage from '../../pages/OrdersPage';
 import ProductsPage from '../../pages/ProductsPage';
 import Layout from '../Layout';
 import store from '../../redux/store';
+import { ORDERS_URL, PRODUCTS_URL } from '../../constants/endpoints';
 import './normalize.css';
 import './styles.css';
 
@@ -15,9 +16,9 @@ const App = () => (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Navigate to="/orders" />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/" element={<Navigate to={ORDERS_URL} />} />
+          <Route path={PRODUCTS_URL} element={<ProductsPage />} />
+          <Route path={ORDERS_URL} element={<OrdersPage />} />
         </Routes>
       </Layout>
     </Router>
